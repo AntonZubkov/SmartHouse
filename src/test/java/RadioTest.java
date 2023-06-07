@@ -281,4 +281,48 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void CheckRadioNumberMax() {
+        Radio radio = new Radio(10);
+
+        radio.setRadioStationNumber(9);
+
+        int expected = 9;
+        int actual = radio.getRadioStationNumber();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void CheckRadioNumberMoreMax() {
+        Radio radio = new Radio(10);
+
+        radio.setRadioStationNumber(10);
+
+        int expected = 0;
+        int actual = radio.getRadioStationNumber();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void CheckRadioNumberMin() {
+        Radio radio = new Radio(10);
+
+        radio.setRadioStationNumber(0);
+
+        int expected = 0;
+        int actual = radio.getRadioStationNumber();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void CheckRadioNumberLessMin() {
+        Radio radio = new Radio(10);
+
+        radio.setRadioStationNumber(-1);
+
+        int expected = 0;
+        int actual = radio.getRadioStationNumber();
+        Assertions.assertEquals(expected, actual);
+    }
+
 }
